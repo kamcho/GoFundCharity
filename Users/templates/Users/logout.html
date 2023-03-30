@@ -1,0 +1,14 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+
+  <br><br>
+  <h6>You have succesfully logged out</h6>
+  <a class="btn btn-primary" href="{% url 'login' %}">Sign In</a>
+
+
+</div>
+{% endblock %}

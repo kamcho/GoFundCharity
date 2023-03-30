@@ -1,0 +1,25 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+  <p>Deposit directly from M-Pesa. An STK push
+      will be sent to the number you signed up with and
+      upon completion your account will be credited.</p>
+  <div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+<div class="form-floating">
+        <input type="number" class="form-control" id="amount" name="amount" placeholder="100" value=100  min="1"  max="10000">
+        <label for="amount">Enter Amount</label>
+      </div>
+<br>
+
+    <button class="btn btn-primary">Deposit</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

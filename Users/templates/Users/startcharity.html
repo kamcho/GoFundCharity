@@ -1,0 +1,124 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+  <p>Enter the required information of the person who will benefit from this charity</p>
+
+    <br>
+    <form method="post">
+
+        {% csrf_token %}
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" class="form-control" id="first-name" name="first-name" placeholder="First Name" value="{{ data1.fname }}" required>
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input class="form-control" id="last-name" name="last-name" placeholder="Other Names" value="{{ data1.lname }}" required></input>
+          </div>
+            <br>
+        </div>
+          <div class="col-md-6">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input class="form-control" id="country" name="country" placeholder="Kenya" value="{{ data1.country }}" required></input>
+          </div>
+        </div>
+          <div class="col-md-6">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input class="form-control" id="city" name="city" placeholder="Nairobi" value="{{ data1.city }}" required></input>
+          </div>
+              <br>
+        </div>
+           <div class="col-md-12">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" id="title" name="title" maxlength="20" placeholder="Help Kareem Study" value="{{ data1.title }}" required></input>
+          </div>
+        </div>
+
+          <center>
+          <div class="col-md-5">
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input class="form-control" id="street" name="street" placeholder="Free Area" required value="{{ data1.area }}" ></input>
+          </div>
+        </div>
+              </center>
+
+
+      </div>
+            <br>
+     <center> <button type="submit" class="btn btn-primary" id="form1" name="form1">NEXT</button></center>
+</form>
+    <br>
+
+    <h6>Who is the target ?</h6>
+    <form method="post">
+
+        {% csrf_token %}
+        <label for="beneficiary" class="form-label">Select beneficiary</label>
+        <select class="form-select "  id="beneficiary" name="beneficiary" aria-label="beneficiary">
+          <option selected disabled>Charity For {{ data2.beneficiary }}</option>
+          <option value="Community" class="form-control">Community</option>
+          <option value="Family Member" class="form-control">Family Member(s)</option>
+          <option value="Friend" class="form-control">Friend</option>
+            <option value="Member of Community" class="form-control">Member of Community</option>
+        </select>
+        <br>
+
+        <p>State the problem and need for charity</p>
+
+      <div class="col-md-8">
+      <div class="form-group">
+        <label for="street">Problem Statement</label>
+        <textarea class="form-control" id="problem" name="problem" maxlength="200" data-value="joel mucene">{{ data2.problem }}</textarea>
+      </div>
+    </div>
+        <br>
+        <p>Explain how the community can help</p>
+
+        <div class="col-md-8">
+      <div class="form-group">
+        <label for="street">Proposed Solution</label>
+        <textarea class="form-control" id="solution" name="solution" maxlength="200">{{ data2.solution }}</textarea>
+      </div>
+    </div>
+        <br>
+        <p>How much is the project expected to cost</p>
+    <div class="col-md-8">
+      <div class="form-group">
+        <label for="street">Target</label>
+        <input type="number" class="form-control" id="target" name="target" min="10000" max="10000000" value="{{ data2.target }}"></input>
+      </div>
+    </div>
+        <br>
+        <p>Accomplish By</p>
+        <div class="col-md-8">
+      <div class="form-group">
+        <label for="expiry">When do you wish to accomplish this by</label>
+        <input type="date" class="form-control" id="expiry" name="expiry" maxlength="200"></input>
+      </div>
+    </div>
+        <br>
+        <button class="btn btn-primary" id="form2" name="form2">Submit</button>
+    </form>
+    <br><br>
+    <p></p>
+
+
+
+</div>
+{% endblock %}

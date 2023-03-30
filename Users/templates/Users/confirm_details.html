@@ -1,0 +1,34 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+  <h5>Confirm that the details you provided are correct</h5>
+    <p>Names</p>
+    <p class="text-muted"> {{ data1.fname }} {{ data1.lname }} </p>
+    <p>Location</p>
+    <p class="text-muted"> {{ data1.country }}, {{ data1.city }}, {{ data1.area }}. </p>
+    <p>Beneficiary relationship</p>
+    <p class="text-muted"> {{ data2.beneficiary }}  </p>
+    <p>Target</p>
+    <p class="text-muted">Ksh {{ data2.target }} </p>
+    <p>Preffered closing date</p>
+    <p class="text-muted"> {{ data2.expiry }}  </p>
+    <p>Problem Statement</p>
+    <p class="text-muted"> {{ data2.problem }}  </p>
+    <p>Proposed Solution</p>
+    <p class="text-muted"> {{ data2.solution }}  </p>
+
+
+  <div class="form-group">
+    <form method="POST">
+
+{% csrf_token %}
+    <button class="btn btn-info">Save</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}
