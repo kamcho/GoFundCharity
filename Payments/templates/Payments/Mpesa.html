@@ -1,0 +1,23 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="amount">Target</label>
+            <input type="number" class="form-control" id="amount" name="amount" placeholder="1" min="1" max="10000000" ></input>
+          </div>
+        </div>
+<br>
+    <button class="btn btn-primary">PAY</button>
+    </form>
+  </div>
+
+
+{% endblock %}

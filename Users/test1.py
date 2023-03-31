@@ -1,27 +1,27 @@
-from deriv_api import DerivAPI
-import asyncio
-api_token="a5JfuWsC2pWbU5I"
-async def api_v():
-    api = DerivAPI( app_id=31063)
-    authorize = await api.authorize(api_token)
+import json
 
-    proposal = await api.proposal({"proposal": 1, "amount": 100, "barrier": "+0.1", "basis": "payout",
-                                   "contract_type": "CALL", "currency": "USD", "duration": 60, "duration_unit": "s",
-                                   "symbol": "R_100"
-    })
-    print(proposal)
-    source_proposal: Observable = await api.subscribe(
-        {"proposal": 1, "amount": 100, "barrier": "+0.1", "basis": "payout",
-         "contract_type": "CALL", "currency": "USD", "duration": 60,
-         "duration_unit": "s",
-         "symbol": "R_100",
-         "subscribe": 1
-         })
-    source_proposal.subscribe(lambda proposal: print(proposal))
-    proposal_id = proposal.get('proposal').get('id')
-    buy = await api.buy({"buy": proposal_id, "price": 100})
-    print(buy)
-    response = await api.balance()
-    print(response['balance']['balance'])
+import requests
+from requests.auth import HTTPBasicAuth
 
-asyncio.run(api_v())
+MPESA_API_KEY = 'jYwIIGJaGijuawn994Da2CgVchBAeEYQ'
+MPESA_API_SECRET = 'xoWKztjJGmnkaR5w'
+MPESA_SHORTCODE = '174379'
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
+
+def generate_access_token():
+    consumer_key = MPESA_API_KEY
+    consumer_secret = MPESA_API_SECRET
+    api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+
+    r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+    print("generating token\n\n\n")
+
+
+    response =json.loads(r.text)
+    access_token = response['access_token']
+    print(access_token)
+
+
+    return access_token
+
+generate_access_token()

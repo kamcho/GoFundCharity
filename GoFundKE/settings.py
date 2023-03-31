@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'Home',
     'Users',
+    'Payments',
 
     ]
 
@@ -131,3 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_TAG='bootstrap4'
 LOGIN_REDIRECT_URL='profile'
 AUTH_USER_MODEL = 'Users.MyUser'
+
+
+# mpesa_settings.py
+MPESA_API_KEY = 'jYwIIGJaGijuawn994Da2CgVchBAeEYQ'
+MPESA_API_SECRET = 'xoWKztjJGmnkaR5w'
+MPESA_SHORTCODE = '174379'
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
