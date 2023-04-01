@@ -1,0 +1,69 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <div>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+
+              <div class="col-md-8">
+                  <div class="form-group">
+                    <label for="quiz">Submit Your Questions</label>
+                    <input class="form-control" id="quiz" name="quiz" maxlength="200"  placeholder="How can i ....">{{ data2.problem }}</input>
+                  </div>
+              </div>
+                <br>
+            <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <br>
+    {% for quiz in quizes %}
+    <div class="accordion" id="transactionsAccordion2" data-display-toggle="False" data-bs-parent="#transactionsAccordion2">
+        <div class="accordion-item">
+            <h6 class="accordion-header" id="headingTwo">
+                <button style="height:40px;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                     <p style= "padding-top:15px;">{{ quiz.quiz }}</p>
+                </button>
+            </h6>
+        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#transactionsAccordion2">
+            <div class="accordion-body">
+
+
+
+
+
+    <p>{{ quiz.answer }}</p>
+
+
+            </div>
+        </div>
+            </div>
+        </div>
+    <br>
+        {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+{% endblock %}

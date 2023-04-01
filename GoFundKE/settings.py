@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-l6$@@$wunz&x!j4h@pq**8pyx!35chx9=*m5(pvozspxrso*_@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS=["https://cd64-197-156-137-164.eu.ngrok.io"]
+
 
 
 # Application definition
@@ -135,7 +137,7 @@ AUTH_USER_MODEL = 'Users.MyUser'
 
 
 # mpesa_settings.py
-MPESA_API_KEY = 'jYwIIGJaGijuawn994Da2CgVchBAeEYQ'
-MPESA_API_SECRET = 'xoWKztjJGmnkaR5w'
+MPESA_API_KEY = 'uBAiPdLXOGEmOqjBYlh2Wt57ecTaRlyz'
+MPESA_API_SECRET = 'rR5Ftd45gurgBaP2'
 MPESA_SHORTCODE = '174379'
 MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'

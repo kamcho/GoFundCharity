@@ -111,3 +111,13 @@ class Project(models.Model):
         return f"{self.user}"
 
 
+class Quizes(models.Model):
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    quiz=models.TextField(max_length=100)
+    answer=models.TextField(max_length=200)
+    date=models.DateTimeField(auto_now=True)
+    answered_on=models.DateTimeField(auto_now=True)
+    status=models.CharField(max_length=10,default='pending')
+    
+    def __str__(self):
+        return f"{self.user}"

@@ -1,4 +1,4 @@
-from .models import Profile,Project
+from .models import *
 from django.shortcuts import redirect, render
 from django.views.generic import ListView,TemplateView
 from Users.forms import MyUserCreationForm
@@ -58,6 +58,33 @@ class Profiles(ListView):
 
 class Home(TemplateView):
     template_name = 'Users/trade.html'
+    
+    def get_context_data(self,*args,**kwargs):
+        context = super(Home, self).get_context_data(**kwargs)
+        context['charities']=Project.objects.all()
+        return context
+
+class QandA(TemplateView):
+    template_name = 'Users/QandA.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(QandA, self).get_context_data(**kwargs)
+        context['quizes'] = Quizes.objects.all()
+        return context
+    def post(self,request):
+        if request.method=="POST":
+            quiz=request.POST.get('quiz')
+            quiz_obj=Quizes.objects.create(user=request.user)
+            quiz_obj.quiz=quiz
+            quiz_obj.save()
+
+            return redirect('quizes')
+
+class Contacts(TemplateView):
+    template_name='Users/contacts.html'
+    def get_context_data(self, *args, **kwargs):
+        context = super(Contacts, self).get_context_data(**kwargs)
+    
 
 class StartCharity(TemplateView):
     template_name = 'Users/startcharity.html'

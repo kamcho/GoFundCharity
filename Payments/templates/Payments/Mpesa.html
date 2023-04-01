@@ -4,10 +4,26 @@
 {% block content %}
 
 <div class="container">
+    
+
+
+    <center>
+        <div>
+            <img src="https://africabusinesscommunities.com/Images/Key%20Logos/mpesa.jpg" width="150" height="100">
+        </div>
+    </center>
+    <br>
 
     <form method="POST">
         {% csrf_token %}
+        <div class="col-md-8">
+          <div class="form-group">
+            <label >Phone</label>
+            <input type="number" class="form-control"  placeholder="{{ user.profile.phone }}" readonly>
 
+            </input>
+          </div>
+        </div>
         <div class="col-md-8">
           <div class="form-group">
             <label for="amount">Target</label>

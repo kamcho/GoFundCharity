@@ -8,6 +8,9 @@ urlpatterns = [
     path('register',views.register, name='register'),
     path('',Home.as_view(),name='home'),
     path('go-fund/',StartCharity.as_view(),name='gofund'),
+    path('Q_A/', QandA.as_view(), name='quizes'),
+    path('go-fund-info/', Contacts.as_view(), name='info'),
+
     path('confirm-details/', ConfirmProject.as_view(), name='confirmproject'),
 
     path('profile/',Profiles.as_view(),name='profile'),
