@@ -1,0 +1,31 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+  <br>
+  <div class="form-group">
+
+    <center>
+      <h6 class="heads">What is GoFundKE ?</h6>
+    </center>
+
+    <div>
+      <p>GoFundKE is a non-governmental
+        organisation aimed at co-ordinating and managing
+        charity events and charitable activities. We aim to connect
+        those in need to the loving care of those who are willing to help.
+      </p>
+    </div>
+
+<!--    <form method="POST">-->
+        {% csrf_token %}
+
+
+    <button class="btn btn-primary">sign in</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 from .models import *
 from django.shortcuts import redirect, render
-from django.views.generic import ListView,TemplateView
+from django.views.generic import ListView,TemplateView,DetailView
 from Users.forms import MyUserCreationForm
 from django.contrib.auth import authenticate
 from django.contrib import messages
@@ -64,6 +64,26 @@ class Home(TemplateView):
         context['charities']=Project.objects.all()
         return context
 
+class ProjectDetail(DetailView):
+    template_name='Users/projectid.html'
+    context_object_name='project'
+    model=Project
+
+    def post(self,request,*args,**kwargs):
+        if request.method=="POST":
+            choice=request.POST.get('lne')
+            print(choice)
+            request.session['project-id']=self.kwargs['pk']
+            print(request.session['project-id'])
+
+            if choice=='Card':
+                return redirect('projectid')
+            else:
+                return redirect('deposit')
+
+
+
+
 class QandA(TemplateView):
     template_name = 'Users/QandA.html'
 
@@ -79,11 +99,26 @@ class QandA(TemplateView):
             quiz_obj.save()
 
             return redirect('quizes')
+        
 
 class Contacts(TemplateView):
     template_name='Users/contacts.html'
-    def get_context_data(self, *args, **kwargs):
-        context = super(Contacts, self).get_context_data(**kwargs)
+
+    def post(self, request):
+        if request.method == "POST":
+            quiz = request.POST.get('quiz')
+            names=request.POST.get('names')
+            phone=request.POST.get('phone')
+            mail=request.POST.get('mail')
+            
+            mail_obj = Mails.objects.create()
+            mail_obj.quiz = quiz
+            mail_obj.mail=mail
+            mail_obj.phone=phone
+            mail_obj.names=names
+            mail_obj.save()
+
+            return redirect('quizes')
     
 
 class StartCharity(TemplateView):

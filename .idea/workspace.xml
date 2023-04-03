@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b53813-7422-4923-b366-305f009bd698" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Users/migrations/0003_quizes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/migrations/0004_quizes_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/migrations/0005_alter_quizes_answered_on.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/templates/Users/QandA.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/migrations/0006_mails.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/DSC_0999_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/analytics.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/bootstrap.bundle.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/carbon.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/docs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/docs.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/docsearch.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/templates/Users/contacts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/templates/Users/projectid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoFundKE/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GoFundKE/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoFundKE/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/GoFundKE/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payments/templates/Payments/Mpesa.html" beforeDir="false" afterPath="$PROJECT_DIR$/Payments/templates/Payments/Mpesa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Payments/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Payments/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/static/Users/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Users/static/Users/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/templates/Users/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/Users/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/templates/Users/trade.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/Users/trade.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/urls.py" afterDir="false" />
@@ -52,13 +54,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Users/static/Users" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pythonProject1\GoFundKE\Users\static\Users" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\pythonProject1\GoFundKE\Payments\templates\Payments" />
     </key>

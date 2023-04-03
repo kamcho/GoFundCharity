@@ -9,7 +9,8 @@ urlpatterns = [
     path('',Home.as_view(),name='home'),
     path('go-fund/',StartCharity.as_view(),name='gofund'),
     path('Q_A/', QandA.as_view(), name='quizes'),
-    path('go-fund-info/', Contacts.as_view(), name='info'),
+    path('About/', Contacts.as_view(), name='info'),
+    path('project/<int:pk>/details', ProjectDetail.as_view(), name='projectid'),
 
     path('confirm-details/', ConfirmProject.as_view(), name='confirmproject'),
 

@@ -62,7 +62,7 @@
             <div class="card" style="width: 17rem;">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO-4Q4uAw7MPWWiDNf2KqwdAswigARFbz6_Q&usqp=CAU" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h6 class="card-title">{{ charity.title }}</h6>
+                  <a href="{% url 'projectid' charity.id %}"><h6 class="card-title">{{ charity.title }}</h6></a>
                   <p class="text-muted" style="font-size:13px;">{{ charity.problem }}</p>
                   <a href="#" class="btn btn-primary" style="font-size:13px;">Donate</a>
                     <br>

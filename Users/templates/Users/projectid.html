@@ -1,0 +1,69 @@
+{% extends 'Users/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <br>
+      <h5>{{ project.title|title }}</h5>
+
+    <br>
+    <div class="idcontainer ">
+        <div class="img-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO-4Q4uAw7MPWWiDNf2KqwdAswigARFbz6_Q&usqp=CAU">
+        </div>
+        <div>
+            <br><br>
+            <p>{{ project.first_name }} | {{ project.last_name }} </p>
+            <p class="text-muted"> {{ project.target_country  }},{{ project.target_city }}.{{ project.target_area }} </p>
+            <p class="text-muted">Education</p>
+        </div>
+        <div>
+            <br><br>
+            <p>target {{ project.target_amount }}  </p>
+            <p class="text-muted">progress {{ project.achieved_amount  }} </p>
+            <p class="text-muted">ends at {{ project.expiry }}</p>
+        </div>
+    </div>
+
+<br>
+    <div style="font-size:14px;">
+        <h6>About {{ project.first_name }}</h6>
+
+        <p class="text-muted">{{ project.problem }}</p>
+        <p class="text-muted">{{ project.solution }} </p>
+    </div>
+
+
+<div>
+    <br>
+    Donate Through
+    <br><br>
+    <div id="trade-table">
+       <div class="form-check form-check-inline"  >
+          <input class="form-check-input" type="radio" name="line" id="name" data-rate="M-Pesa" value='M-Pesa'  >
+           <label>M-Pesa</label>
+       </div>
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="line" id="silver-radio" value='Card'  >
+          <label>Card</label>
+      </div>
+
+
+
+
+  </div>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+
+
+
+    <button class="btn btn-info">Next</button>
+    </form>
+</div>
+
+
+</div>
+{% endblock %}
