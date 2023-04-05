@@ -108,12 +108,14 @@ class Contacts(TemplateView):
         if request.method == "POST":
             quiz = request.POST.get('quiz')
             names=request.POST.get('names')
+            location=request.POST.get('location')
             phone=request.POST.get('phone')
             mail=request.POST.get('mail')
             
             mail_obj = Mails.objects.create()
             mail_obj.quiz = quiz
             mail_obj.mail=mail
+            mail_obj.location=location
             mail_obj.phone=phone
             mail_obj.names=names
             mail_obj.save()

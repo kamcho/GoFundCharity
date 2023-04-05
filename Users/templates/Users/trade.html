@@ -59,13 +59,17 @@
         {% for charity in charities %}
         
         <div>
-            <div class="card" style="width: 17rem;">
+            <div class="card" style="width: 18rem;">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO-4Q4uAw7MPWWiDNf2KqwdAswigARFbz6_Q&usqp=CAU" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <a href="{% url 'projectid' charity.id %}"><h6 class="card-title">{{ charity.title }}</h6></a>
+                  <a href="{% url 'projectid' charity.id %}" style="text-decoration:none;"><h6 class="card-title">{{ charity.title }}</h6></a>
                   <p class="text-muted" style="font-size:13px;">{{ charity.problem }}</p>
-                  <a href="#" class="btn btn-primary" style="font-size:13px;">Donate</a>
-                    <br>
+
+                    <p class="text-muted">progress</p>
+              <div class="progress" style="height:6px;">
+
+              <div class="progress-bar bg-aqua"  role="progressbar" style="background-color: aqua;" value="49%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
                    <p class="txt txt-dark">{{ charity.achieved_amount }}|{{ charity.target_amount }}</p>
 
                 </div>

@@ -2,23 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b53813-7422-4923-b366-305f009bd698" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Users/migrations/0006_mails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/DSC_0999_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/analytics.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/bootstrap.bundle.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/carbon.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/docs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/docs.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/static/Users/docsearch.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/templates/Users/contacts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Users/templates/Users/projectid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/migrations/0007_mails_location.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Airtel_(2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Apple-Logo-PNG10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Facebook_logo_(square).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Huawei-Logo-PNG8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/LG-Logo-PNG7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/PlayStation-Logo-PNG8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Safaricom-Logo.wine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Samsung-Logo-PNG1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Sony-Logo-PNG2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/static/Users/Twitter-logo.svg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoFundKE/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GoFundKE/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/static/Users/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Users/static/Users/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/templates/Users/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/Users/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/templates/Users/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/Users/contacts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/templates/Users/trade.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/Users/trade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
