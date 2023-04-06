@@ -1,0 +1,95 @@
+{% extends 'Users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+
+<br><br>
+    <form method="post" >
+
+
+        {% csrf_token %}
+  <div class="col-md-8">
+    <div class="input-group">
+  <span class="input-group-text">Card Expiry</span>
+  <input type="text" name="'card" id="card" maxlength="16" minlength="16" placeholder="1234 1234 1234 1234" class="form-control" required>
+  <input type="text" name="cvc" id="cvc" minlength="3" maxlength="3" placeholder="CVC" class="form-control" required>
+  <br>
+  <small id="carderror" style="color:red;padding-left:2px;" class="error"></small>
+
+</div>
+  </div>
+<br>
+    <div class="col-md-8">
+<div class="input-group">
+  <span class="input-group-text">Card Expiry</span>
+  <input type="number" name="month" id="monthInput" max="12" placeholder="MM" class="form-control" required>
+  <input type="number"  name="year" id="yearInput" min="23" maxlength="2" placeholder="YY" class="form-control" required>
+  <br>
+  <small id="monthError" style="color:red;padding-left:2px;" class="error"></small>
+
+</div>
+
+
+</div>
+
+
+    <br>
+<div class="col-md-8">
+    <div class="form-group">
+      <input type="text" class="form-control"   name="names" placeholder="JOHN DOE"  required>
+    </div>
+  </div>
+
+<br>
+<div class="col-md-8">
+  <select class="form-select" id="currency" name="currency" required>
+    {% for currency_code in countries %}
+      <option value="{{ currency_code }}">{{ currency_code|upper }}</option>
+    {% endfor %}
+  </select>
+</div>
+        <br>
+
+
+<button class="btn btn-primary">Donate</button>
+
+
+
+</form>
+
+
+
+
+<script>
+  // Add event listeners to the input fields
+  var monthInput = document.getElementById("monthInput");
+  monthInput.addEventListener("input", checkExpiration);
+  var yearInput = document.getElementById("yearInput");
+  yearInput.addEventListener("input", checkExpiration);
+
+  // Function to check if the date has expired
+  function checkExpiration() {
+    // Get the month and year values entered by the user
+    var month = monthInput.value;
+    var year = yearInput.value;
+    // If the month or year values are empty, exit the function
+    if (!month || !year) {
+      return;
+    }
+    // Convert the month and year values to a Date object
+    var date = new Date("20" + year, month - 1, 1);
+    // Get the current date
+    var now = new Date();
+    // If the date has expired, show an error message
+    if (date < now) {
+      document.getElementById("monthError").textContent = "expired.";
+      document.getElementById("yearError").textContent = "This date has expired.";
+    } else {
+      document.getElementById("monthError").textContent = "";
+      document.getElementById("yearError").textContent = "";
+    }
+  }
+</script>
+{% endblock %}

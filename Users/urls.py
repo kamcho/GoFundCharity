@@ -12,6 +12,7 @@ urlpatterns = [
     path('About/', Contacts.as_view(), name='info'),
     path('project/<int:pk>/details', ProjectDetail.as_view(), name='projectid'),
     path('process-payment/', views.StripeWebhookView, name='processpayment'),
+    path('stripe-card-donation/', PaymentView.as_view(), name='stripe-pay'),
 
     path('confirm-details/', ConfirmProject.as_view(), name='confirmproject'),
 

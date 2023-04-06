@@ -132,4 +132,21 @@ class Mails(models.Model):
     
     def __str__(self):
         return f"{self.names}"
-    
+
+class StripeCardPayments(models.Model):
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    project_id=models.CharField(max_length=15)
+    transact_id=models.CharField(max_length=100)
+    amount=models.PositiveIntegerField()
+    intent=models.CharField(max_length=100)
+    currency=models.CharField(max_length=10)
+    country= models.CharField(max_length=10 )
+    email=models.EmailField()
+    name=models.CharField(max_length=100)
+    payment_method=models.CharField(max_length=30)
+    date=models.DateTimeField(auto_now=True)
+    created=models.CharField(max_length=15)
+
+    def __str__(self):
+        return f"{self.user}"
+

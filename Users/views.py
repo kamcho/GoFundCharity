@@ -82,13 +82,71 @@ class ProjectDetail(DetailView):
             print(request.session['project-id'])
 
             if choice=='Card':
-                return redirect('https://donate.stripe.com/test_bIY4j94kGcw31QQ000')
+                return redirect('stripe-pay')
             else:
                 return redirect('deposit')
 
 
+
+import requests
+from django.conf import settings
+from django.views.generic import TemplateView
 import stripe
-from django.http import HttpResponse
+
+stripe.api_key = "sk_test_51MrhGPHSDxMMHnYTxwz5LLK9vGRHde981TLoCjmE9HNOmtbvAlIZbn9eCk29JFq98zziGrwKOxfj1ol5N9TDEOHo00eHUdjtjw"
+
+class PaymentView(TemplateView):
+    template_name = "Users/card.html"
+
+    def get_context_data(self,*args,**kwargs):
+
+        context = super(PaymentView, self).get_context_data(**kwargs)
+
+        currencies = stripe.CountrySpec.list()['data'][0][  "supported_payment_currencies"]
+
+        context['countries']=currencies
+        print(currencies)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        # Get the user's card information from the form
+        card_number = request.POST.get("card_number")
+        exp_month = request.POST.get("month")
+        exp_year = request.POST.get("year")
+        cvc = request.POST.get("cvc")
+        names=request.POST.get('names')
+        print(exp_month)
+
+        customer = stripe.Customer.create(
+            source={
+                "object": "card",
+                "number": card_number,
+                "exp_month": exp_month,
+                "exp_year": exp_year,
+                "cvc": cvc,
+                "name":names,
+            }
+        )
+        #
+        # # Create a Stripe Charge object to process the payment
+        # amount = 1000  # This is in cents
+        # currency = "usd"
+        # charge = stripe.Charge.create(
+        #     amount=amount,
+        #     currency=currency,
+        #     customer=customer.id,
+        #     description="Test payment",
+        # )
+        #
+        # # Render a confirmation page if the payment was successful
+        return self.render_to_response({"success": True})
+
+
+
+
+
+
+
 @csrf_exempt
 def StripeWebhookView(request):
     # @csrf_protect
@@ -116,6 +174,7 @@ def StripeWebhookView(request):
         elif event['type'] == 'charge.succeeded':
             charge = event['data']['object']
             print(charge)
+            secret_key='sk_test_51MrhGPHSDxMMHnYTxwz5LLK9vGRHde981TLoCjmE9HNOmtbvAlIZbn9eCk29JFq98zziGrwKOxfj1ol5N9TDEOHo00eHUdjtjw'
             # ... handle other event types
         else:
             print('Unhandled event type {}'.format(event['type']))
