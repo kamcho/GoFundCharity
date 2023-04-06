@@ -4,6 +4,11 @@ from django.views.generic import ListView,TemplateView,DetailView
 from Users.forms import MyUserCreationForm
 from django.contrib.auth import authenticate
 from django.contrib import messages
+import stripe
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+
 
 # Create your views here.
 
@@ -71,17 +76,50 @@ class ProjectDetail(DetailView):
 
     def post(self,request,*args,**kwargs):
         if request.method=="POST":
-            choice=request.POST.get('lne')
+            choice=request.POST.get('line')
             print(choice)
             request.session['project-id']=self.kwargs['pk']
             print(request.session['project-id'])
 
             if choice=='Card':
-                return redirect('projectid')
+                return redirect('https://donate.stripe.com/test_bIY4j94kGcw31QQ000')
             else:
                 return redirect('deposit')
 
 
+import stripe
+from django.http import HttpResponse
+@csrf_exempt
+def StripeWebhookView(request):
+    # @csrf_protect
+
+    if request.method=="POST":
+        payload = request.body
+        sig_header = request.META["HTTP_STRIPE_SIGNATURE"]
+        endpoint_secret = "whsec_WLix6iladiKi5cALUPKuaPolsf8JKH1H"
+
+        try:
+            event = stripe.Webhook.construct_event(
+                payload, sig_header, endpoint_secret
+            )
+        except ValueError:
+            return HttpResponse(status=400)
+        except stripe.error.SignatureVerificationError:
+            return HttpResponse(status=400)
+
+        if event['type'] == 'charge.failed':
+            charge = event['data']['object']
+            print(charge)
+        elif event['type'] == 'charge.pending':
+            charge = event['data']['object']
+            print(charge)
+        elif event['type'] == 'charge.succeeded':
+            charge = event['data']['object']
+            print(charge)
+            # ... handle other event types
+        else:
+            print('Unhandled event type {}'.format(event['type']))
+        return HttpResponse(status=200)
 
 
 class QandA(TemplateView):

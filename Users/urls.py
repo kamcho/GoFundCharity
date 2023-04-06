@@ -11,6 +11,7 @@ urlpatterns = [
     path('Q_A/', QandA.as_view(), name='quizes'),
     path('About/', Contacts.as_view(), name='info'),
     path('project/<int:pk>/details', ProjectDetail.as_view(), name='projectid'),
+    path('process-payment/', views.StripeWebhookView, name='processpayment'),
 
     path('confirm-details/', ConfirmProject.as_view(), name='confirmproject'),
 

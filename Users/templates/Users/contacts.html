@@ -100,81 +100,70 @@
 
        <br>
          <center>
-              <h6 class="dashed-heading">Our Donors</h6>
+              <h6 class="dashed-heading">Contact Us</h6>
          </center>
 
-        <div class="donors" style="align-items:center;">
-            <div class="slider">
-                  <div class="slider-container">
-                    <img src="{% static 'Users/DSC_0999_2.jpg'  %}" alt="Donor 1">
-                    <img src="{% static 'Users/Airtel_(2).png'  %}" alt="Donor 2">
-                    <img src="{% static 'Users/Facebook_logo_(square).png'  %}" alt="Donor 3">
-                    <img src="{% static 'Users/Apple-Logo-PNG10.png'  %}" alt="Donor 1">
-                    <img src="{% static 'Users/Huawei-Logo-PNG8.png'  %}" alt="Donor 2">
-<!--                    <img src="{% static 'Users/LG-Logo-PNG7.png'  %}" alt="Donor 3">-->
-                      <img src="{% static 'Users/PlayStation-Logo-PNG8.png'  %}" alt="Donor 1">
-                    <img src="{% static 'Users/Safaricom-Logo.wine.png'  %}" alt="Donor 2">
-                  <img src="{% static 'Users/Samsung-Logo-PNG1.png'  %}" alt="Donor 3">
-                      <img src="{% static 'Users/Sony-Logo-PNG2.png'  %}" alt="Donor 1">
-                    <img src="{% static 'Users/Twitter-logo.svg.png'  %}" alt="Donor 2">
 
-                  </div>
-                  <a class="slider-control left"></a>
-                  <a class="slider-control right"></a>
-            </div>
+       <br>
+        <br>
+        <div>
+
+            <ul style="list-style:none;">
+                <li><i class="bi bi-facebook"></i> GoFundKE</li>
+                <li><i class="bi bi-twitter"> </i>@GoFundKE</li>
+                <li><i class="bi bi-linkedin"></i> @GoFundKE</li>
+                <li><i class="bi bi-phone"></i>+254 742134431</li>
+                <li><i class="bi bi-envelope-at"></i>gofundke.org@ac.ke</li>
+
+            </ul>
+        </div>
+
+    <form method="post">
+
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="names">Official Names</label>
+            <input type="text" class="form-control" id="names" name="names" placeholder="John Doe"  required>
+          </div>
+
 
         </div>
-        <pre>
-            hello
-            world
-            html
-        </pre>
-<!--    <form method="post">-->
-
-<!--      {% csrf_token %}-->
-<!--      <div class="row">-->
-<!--        <div class="col-md-6">-->
-<!--          <div class="form-group">-->
-<!--            <label for="names">Official Names</label>-->
-<!--            <input type="text" class="form-control" id="names" name="names" placeholder="John Doe"  required>-->
-<!--          </div>-->
-
-
-<!--        </div>-->
-<!--        <div class="col-md-6">-->
-<!--          <div class="form-group">-->
-<!--            <label for="location">Location</label>-->
-<!--            <input class="form-control" id="location" name="location" placeholder="Country, City, Street" required></input>-->
-<!--          </div>-->
-<!--            <br>-->
-<!--        </div>-->
-<!--        <div class="col-md-6">-->
-<!--          <div class="form-group">-->
-<!--            <label for="mail">E-Mail</label>-->
-<!--            <input type="email" class="form-control" id="mail" name="mail" placeholder="johndoe@gmail.com"  required></input>-->
-<!--          </div>-->
-<!--            <br>-->
-<!--        </div>-->
-<!--        <div class="col-md-6">-->
-<!--          <div class="form-group">-->
-<!--            <label for="phone">Phone</label>-->
-<!--            <input class="form-control" id="phone" name="phone" placeholder="254 712 345 678" ></input>-->
-<!--          </div>-->
-<!--            <br>-->
-<!--        </div>-->
-<!--        <div class="col-md-12">-->
-<!--          <div class="form-group">-->
-<!--            <label for="quiz">Your Question</label>-->
-<!--            <textarea class="form-control" id="quiz" name="quiz" rows="5" placeholder="lorem ipsum gem mien sui noi ables" value="{{ data1.lname }}" required></textarea>-->
-<!--          </div>-->
-<!--            <br>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    <center>-->
-<!--            <button class="btn btn-primary">Submit</button>-->
-<!--    </center>-->
-<!--    </form>-->
-<!--  </div>-->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input class="form-control" id="location" name="location" placeholder="Country, City, Street" required></input>
+          </div>
+            <br>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="mail">E-Mail</label>
+            <input type="email" class="form-control" id="mail" name="mail" placeholder="johndoe@gmail.com"  required></input>
+          </div>
+            <br>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" id="phone" name="phone" placeholder="254 712 345 678" ></input>
+          </div>
+            <br>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="quiz">Your Question</label>
+            <textarea class="form-control" id="quiz" name="quiz" rows="5" placeholder="lorem ipsum gem mien sui noi ables" value="{{ data1.lname }}" required></textarea>
+          </div>
+            <br>
+        </div>
+      </div>
+    <center>
+            <button class="btn btn-primary" style="margin-bottom:20px;">Submit</button>
+    </center>
+    </form>
+  </div>
 
 </div>
 

@@ -40,15 +40,7 @@
     <br>
     Donate Through
     <br><br>
-    <div id="trade-table">
-       <div class="form-check form-check-inline"  >
-          <input class="form-check-input" type="radio" name="line" id="name" data-rate="M-Pesa" value='M-Pesa'  >
-           <label>M-Pesa</label>
-       </div>
-      <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="line" id="silver-radio" value='Card'  >
-          <label>Card</label>
-      </div>
+
 
 
 
@@ -57,9 +49,18 @@
     <br>
     <form method="POST">
         {% csrf_token %}
+<div id="trade-table">
+       <div class="form-check form-check-inline"  >
+          <input class="form-check-input" type="radio" name="line" id="name" data-rate="M-Pesa" value='M-Pesa'  >
+           <label>M-Pesa</label>
+       </div>
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="line" id="card" value='Card'  >
+          <label>Card</label>
+      </div>
 
-
-
+<br>
+    <br>
     <button class="btn btn-info">Next</button>
     </form>
 </div>

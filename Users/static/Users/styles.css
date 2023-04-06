@@ -163,9 +163,10 @@ body{
     white-space:nowrap;
 }
 .slider img{
-    height:50px;
-    width:50px;
+    height:80px;
+    width:80px;
     padding:10px;
+    border-radius:50%;
 }
 
 
