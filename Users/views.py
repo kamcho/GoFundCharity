@@ -110,36 +110,39 @@ class PaymentView(TemplateView):
 
     def post(self, request, *args, **kwargs):
         # Get the user's card information from the form
-        card_number = request.POST.get("card_number")
-        exp_month = request.POST.get("month")
-        exp_year = request.POST.get("year")
-        cvc = request.POST.get("cvc")
-        names=request.POST.get('names')
-        print(exp_month)
-
-        customer = stripe.Customer.create(
-            source={
-                "object": "card",
-                "number": card_number,
-                "exp_month": exp_month,
-                "exp_year": exp_year,
-                "cvc": cvc,
-                "name":names,
-            }
-        )
-        #
-        # # Create a Stripe Charge object to process the payment
-        # amount = 1000  # This is in cents
-        # currency = "usd"
-        # charge = stripe.Charge.create(
-        #     amount=amount,
-        #     currency=currency,
-        #     customer=customer.id,
-        #     description="Test payment",
-        # )
-        #
-        # # Render a confirmation page if the payment was successful
-        return self.render_to_response({"success": True})
+        if request.method=="POST":
+            card_number = request.POST.get("card")
+            exp_month = request.POST.get("month")
+            exp_year = request.POST.get("year")
+            cvc = request.POST.get("cvc")
+            names=request.POST.get('names')
+            print(card_number)
+            token=stripe.Token.create(
+                  card={
+                    'number': card_number,
+                    'exp_month': exp_month,
+                    'exp_year': exp_year,
+                    'cvc': cvc,
+                      "name":names,
+                  },
+                )
+            customer = stripe.Customer.create(
+                source=token
+            )
+            print(customer)
+            #
+            # # Create a Stripe Charge object to process the payment
+            # amount = 1000  # This is in cents
+            # currency = "usd"
+            # charge = stripe.Charge.create(
+            #     amount=amount,
+            #     currency=currency,
+            #     customer=customer.id,
+            #     description="Test payment",
+            # )
+            #
+            # # Render a confirmation page if the payment was successful
+            return self.render_to_response({"success": True})
 
 
 
