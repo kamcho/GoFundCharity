@@ -83,6 +83,7 @@ admin.site.register(MyUser, UserAdmin)
 admin.site.register(Profile)
 admin.site.register(Project)
 admin.site.register(Mails)
+admin.site.register(StripeCardPayments)
 admin.site.register(Quizes)
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.

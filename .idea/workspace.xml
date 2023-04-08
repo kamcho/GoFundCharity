@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b53813-7422-4923-b366-305f009bd698" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Users/migrations/0008_stripecardpayments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/migrations/0009_alter_stripecardpayments_amount.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoFundKE/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GoFundKE/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/templates/Users/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/Users/card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/templates/Users/trade.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/Users/trade.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
