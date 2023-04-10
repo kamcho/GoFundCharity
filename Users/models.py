@@ -115,42 +115,7 @@ class Project(models.Model):
         return percent
 
 
-class Quizes(models.Model):
-    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    quiz=models.TextField(max_length=100)
-    answer=models.TextField(max_length=200)
-    date=models.DateTimeField(auto_now=True)
-    answered_on=models.DateTimeField(auto_now=True)
-    status=models.CharField(max_length=10,default='pending')
-    
-    def __str__(self):
-        return f"{self.user}"
 
-class Mails(models.Model):
-    names=models.CharField(max_length=100)
-    phone=models.CharField(max_length=15,blank=True)
-    location=models.CharField(max_length=50)
-    mail=models.EmailField()
-    quiz=models.TextField(max_length=200)
-    date=models.DateTimeField(auto_now=True)
-    
-    def __str__(self):
-        return f"{self.names}"
 
-class StripeCardPayments(models.Model):
-    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    project_id=models.CharField(max_length=15)
-    transact_id=models.CharField(max_length=100)
-    amount=models.IntegerField()
-    message=models.TextField(max_length=200)
-    currency=models.CharField(max_length=10)
-    name=models.CharField(max_length=100)
-    country=models.CharField(max_length=100)
 
-    brand=models.CharField(max_length=30)
-    date=models.DateTimeField(auto_now=True)
-    created=models.CharField(max_length=15)
-
-    def __str__(self):
-        return f"{self.user}"
 

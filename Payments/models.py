@@ -20,3 +20,19 @@ class MpesaPayment(models.Model):
 
     def __str__(self):
         return self.user
+class StripeCardPayments(models.Model):
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    project_id=models.CharField(max_length=15)
+    transact_id=models.CharField(max_length=100)
+    amount=models.IntegerField()
+    message=models.TextField(max_length=200)
+    currency=models.CharField(max_length=10)
+    name=models.CharField(max_length=100)
+    country=models.CharField(max_length=100)
+
+    brand=models.CharField(max_length=30)
+    date=models.DateTimeField(auto_now=True)
+    created=models.CharField(max_length=15)
+
+    def __str__(self):
+        return f"{self.user}"

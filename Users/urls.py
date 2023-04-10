@@ -6,13 +6,10 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('register',views.register, name='register'),
-    path('',Home.as_view(),name='home'),
+
     path('go-fund/',StartCharity.as_view(),name='gofund'),
-    path('Q_A/', QandA.as_view(), name='quizes'),
-    path('About/', Contacts.as_view(), name='info'),
+
     path('project/<int:pk>/details', ProjectDetail.as_view(), name='projectid'),
-    path('process-payment/', views.StripeWebhookView, name='processpayment'),
-    path('stripe-card-donation/', PaymentView.as_view(), name='stripe-pay'),
 
     path('confirm-details/', ConfirmProject.as_view(), name='confirmproject'),
 
